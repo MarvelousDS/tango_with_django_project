@@ -25,7 +25,7 @@ def index(request):
     page_list = Page.objects.order_by('-views')[:5]
 
     context_dict = {}
-    context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
+    context_dict['boldmessage'] = 'Rango says hey there partner!'
     context_dict['categories'] = category_list
     context_dict['pages'] = page_list
 
@@ -38,6 +38,7 @@ def about(request):
     # return HttpResponse("Rango says here is the about page. <a href='/rango/'>Index</a>")
     # context_dict = {'boldmessage': 'This tutorial has been put together by Changcheng Mao'}
     # return render(request, 'rango/about.html', context=context_dict)
+    # Rango says here is the about page.
     print(request.method)
     print(request.user)
 
@@ -48,8 +49,8 @@ def about(request):
     visitor_cookie_handler(request)
     context_dict['visits'] = request.session['visits']
 
-    return render(request, 'rango/about.html', context=context_dict)
-
+    # return render(request, 'rango/about.html', context=context_dict)
+    return HttpResponse("Rango says here is the about page. <a href='/rango/'>Index</a>")
 
 def show_category(request, category_name_slug):
     context_dict = {}
