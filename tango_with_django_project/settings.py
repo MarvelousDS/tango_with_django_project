@@ -23,8 +23,6 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = [STATIC_DIR, ]
 
-LOGIN_URL = 'rango:login'
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -38,17 +36,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-PASSWORD_HASHERS = (
-    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
-    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
-)
-
-# PASSWORD_HASHERS = [
-#     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
-#     'django.contrib.auth.hashers.BCryptPasswordHasher',
-#     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
-#     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
-# ]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -112,7 +99,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-        'OPTIONS': {'min_length': 6, }
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
